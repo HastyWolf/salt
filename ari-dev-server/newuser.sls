@@ -3,7 +3,7 @@ add-sudo-group:
     - name: sudo
 
 add-new-user:
-  user.prsent:
+  user.present:
     - name: capt_underpants
     - password: letmein123
     - fullname: Chris
