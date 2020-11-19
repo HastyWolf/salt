@@ -3,3 +3,5 @@ base:
     - chris-dev-server
   'ari-dev-server':
     - ari-dev-server
+    - nginx
+    
