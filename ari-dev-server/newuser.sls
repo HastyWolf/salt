@@ -3,9 +3,9 @@ add-sudo-group:
     - name: sudo
 
 add-new-user:
-  user.present:
+  user.prsent:
     - name: capt_underpants
     - password: letmein123
     - fullname: Chris
-    - groups: 
+    - groups:
       - sudo
