@@ -3,7 +3,7 @@ ensure-default-website-removed:
     - name: /var/www/html/index.nginx-debian.html
 
 copy-website:
-  file.managed
+  file.managed:
     - name: /var/www/html/index.html
     - source: salt://ari-dev-server/files/nginx/index.html
     - user: root
@@ -13,6 +13,6 @@ copy-website:
 restart-nginx-if-website-updated:
   service.running:
   - name: nginx
-  - reload: False
+  - reload: True
   - watch:
     - file: /var/www/html/index.html
