@@ -15,5 +15,3 @@ restart-nginx-if-website-updated:
   service.running:
     - name: nginx
     - reload: True
-    - watch:
-      - file: /var/www/html/index.html
