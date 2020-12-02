@@ -10,6 +10,7 @@ copy-website:
     - group: root
     - dir_mode: 755
     - file_mode: 644
+    - recurse: True
 
 restart-nginx-if-website-updated:
   service.running:
