@@ -3,14 +3,13 @@ ensure-default-website-removed:
     - name: /var/www/html/index.nginx-debian.html
 
 copy-website:
-  file.directory:
+  file.recurse:
     - name: /var/www/html/
     - source: salt://chris-dev-server/files/
     - user: root
     - group: root
     - dir_mode: 755
     - file_mode: 644
-    - recurse: True
 
 restart-nginx-if-website-updated:
   service.running:
