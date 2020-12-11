@@ -1,18 +1,19 @@
 ensure-default-website-removed:
-  file.absent:
+   file.absent:
     - name: /var/www/html/index.nginx-debian.html
 
 copy-website:
-  file.managed:
-    - name: /var/www/html/index.html
-    - source: salt://ari-dev-server/files/nginx/index.html
+  file.recurse:
+    - name: /var/www/html/
+    - source: salt://ari-dev-server/files/
     - user: root
     - group: root
-    - mode: '0644'
+    - dir_mode: 755
+    - file_mode: 644
 
 restart-nginx-if-website-updated:
   service.running:
     - name: nginx
     - reload: True
     - watch:
-      - file: /var/www/html/index.html
+      - file: /var/www/html/*
