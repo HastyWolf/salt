@@ -1,4 +1,4 @@
 installed packages:
   pkg.installed:
-    - pkgs:
-      - nginx
+    - name: nginx
+    - version: '>=1.18.0'
